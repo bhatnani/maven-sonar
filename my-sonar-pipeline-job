@@ -1,0 +1,16 @@
+pipeline 
+{
+agent any
+stages
+{
+stage ('package')
+{
+steps
+{
+withSonarQubeEnv {
+sh 'mvn package sonar:sonar'
+}
+}
+}
+}
+}
